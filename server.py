@@ -1,6 +1,6 @@
 """
 author - lihi
-date   - 2/11/22
+date   - 2 / 11 / 22
 server
 """
 import socket

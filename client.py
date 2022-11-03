@@ -1,13 +1,12 @@
 """
 author - lihi
-date   - 2/11/22
+date   - 2 / 11 / 22
 client
 """
 import os
 import socket
 from threading import Thread
 import hashlib
-from os import cpu_count
 
 SERVER_IP = '127.0.0.1'
 SERVER_PORT = 8080
@@ -33,14 +32,15 @@ def prot_recv(client_socket):
 
 def check(start, crack_hash, digits):
     """
-    the function getting the hash of every number in the range and checks if it is our hash string
+    the function getting the hash of every number
+in the range and checks if it is our hash string
     :param start:
     :param crack_hash:
     :param digits:
     :return: the answer if it finds the right hash string
     """
     global ANSWER
-    for i in range(start, start+DATA_PER_CORE):
+    for i in range(start, start + DATA_PER_CORE):
         str2hash = str(i).zfill(digits)
         result = hashlib.md5(str2hash.encode())
         if result.hexdigest() == crack_hash:
